@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+body{
+    background: linear-gradient(to right, rgba(255, 0, 150, 0.7), rgba(0, 204, 255, 0.7)), 
+    linear-gradient(to bottom, #ff758c, #ff7eb3);
+
+}
+body{
+    background: linear-gradient(135deg, #d5d9e9, #bab4c0);
+
+}
+
+
+  
