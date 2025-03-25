@@ -1,0 +1,22 @@
+<div form="registration-form">
+    <h2>Registration Form</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" [(ngModel)]="name" name="name" required>
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" [(ngModel)]="email" name="email" required>
+      </div>
+      <div>
+        <label for="course">Course:</label>
+        <select id="course" [(ngModel)]="course" name="course" required>
+          <option value="programming languages">programming languages</option>
+          <option value="game Development">game developmemt</option>
+          <option value="FullstackDevelopment">FullstackDevelopment</option>
+        </select>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>

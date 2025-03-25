@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MyservicesService } from './myservices.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'pratice';
-  showForm: boolean = false;
+  recipes:any = {};
+  constructor(public as:MyservicesService){
+    this.as.getData().subscribe((res)=>this.recipes=res)
+  }
+  
 }

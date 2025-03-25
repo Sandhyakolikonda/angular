@@ -7,6 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'pratice';
-  showForm: boolean = false;
+  title = 'pipes';
+  name= "sandhya";
+  name1= "sandy";
+  price=30;
+  dt= new Date();
 }

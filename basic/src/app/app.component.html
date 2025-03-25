@@ -1,0 +1,18 @@
+<header>
+  <h2>SHOP</h2>
+</header>
+<main>
+  <div class="products" >
+    <div class="product" *ngFor="let p of products">
+      <img src={{p.image}} alt={{p.title}} height="200">
+      <h2>{{p.title}}</h2>
+      <p>category:<span>{{p.category}}</span></p>
+      <p>price: {{p.price|currency:"INR"}}</p>
+      <button>add to cart</button>
+
+    </div>
+  </div>
+</main>
+<footer>
+  <h2>this site belongs to me</h2>
+</footer>

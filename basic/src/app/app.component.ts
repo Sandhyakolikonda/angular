@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiService } from './api.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'pratice';
-  showForm: boolean = false;
+  products:any=[]
+  constructor(public as:ApiService){
+    this.as.getData().subscribe((res)=> this.products=res)
+  }
+  
 }

@@ -1,5 +1,13 @@
-<h1 class="text-8xl text-center text-blue-950 font-bold hover:bg-pink-300 animate-pulse">Sandhya Solutions</h1>
+<h1 class="text-8xl text-center text-blue-950 font-bold hover:bg-pink-300 animate-bounce">Sandhya Solutions</h1>
 <h1 class="text-7xl text-center text-blue-800 font-medium hover:blue-500 animate-bounce px-2.5 py-3">Programming & Development</h1>
+<nav>
+    <ul class=" list-none flex gap-3 text-white text-center">
+     <li><a href="" class=" text-2xl text-black hover:decoration-1 hover:scale-110 hover:text-blue-500 text-left transition-all duration-300">Home</a></li>
+     <li><a href="" class=" text-2xl text-black hover:decoration-1 hover:scale-110 hover:text-blue-500 text-left transition-all duration-300">About</a></li>
+     <li><a href="" class=" text-2xl text-black hover:decoration-1 hover:scale-110 hover:text-blue-500 text-left transition-all duration-300">Products</a></li>
+     <li><a href="" class=" text-2xl text-black hover:text-blue-500 transition-all duration-300">Contact</a></li>
+    </ul>
+ </nav>
 <div class="grid grid-cols-4 gap-10 shadow-blue-400 px-2.5 py-4"  >
     <app-tech title="FullstackDevelopment" image="https://www.softcrayons.com/uploads/blogs/67078d2339e51.png">
         <p>Learn both frontend and backend technologies to build complete web applications.</p>
@@ -264,9 +272,15 @@
         <p>Price: ₹60000</p>
     </app-tech>
     </div>
+
+<div *ngIf="showForm">
+    <button (click)="showForm =!showForm">Enroll</button>
+</div>
+
+    
     <footer class=" bg-black text-3xl text-white text-center font-extrabold"> 
         This site belongs to S.A.N.D.H.Y.A&copy; 2025
   </footer>
-    
+  
     
     
