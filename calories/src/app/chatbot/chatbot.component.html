@@ -1,0 +1,89 @@
+<h1 class=" py-5 text-4xl text-black-300 justify-center items-center text-center font-serif animate-bounce duration-600">count your calories</h1>
+<div class="min-h-screen bg-gray-50 p-4">
+  <div class="max-w-5xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+    
+    <div class="bg-gradient-to-r from-green-600 to-blue-600 text-white p-4">
+      <h1 class="text-2xl font-bold">Nutrition Assistant</h1>
+      
+    </div>
+
+    
+    <div class="h-96 overflow-y-auto p-4">
+      <div *ngFor="let message of messages" class="mb-4">
+        <div [class.justify-end]="message.sender === 'user'" class="flex">
+          
+          <div *ngIf="message.sender === 'user'" 
+               class="bg-blue-500 text-white px-4 py-2 rounded-lg max-w-[80%]">
+            {{message.content}}
+          </div>
+          
+          
+          <div *ngIf="message.sender === 'bot'"
+               class="bg-green-50 border border-green-200 px-4 py-2 rounded-lg max-w-[80%]">
+            
+            <div *ngIf="message.nutritionData; else textOnly">
+              
+              <div class="grid grid-cols-2 gap-2 mb-3">
+                <div class="bg-amber-50 p-2 rounded">
+                  <p class="text-xs text-amber-600">Calories</p>
+                  <p class="font-bold">{{message.nutritionData.calories || 'N/A'}}</p>
+                </div>
+                <div class="bg-blue-50 p-2 rounded">
+                  <p class="text-xs text-blue-600">Protein</p>
+                  <p class="font-bold">{{message.nutritionData.protein || 'N/A'}}</p>
+                </div>
+                <div class="bg-purple-50 p-2 rounded">
+                  <p class="text-xs text-purple-600">Carbs</p>
+                  <p class="font-bold">{{message.nutritionData.carbs || 'N/A'}}</p>
+                </div>
+                <div class="bg-red-50 p-2 rounded">
+                  <p class="text-xs text-red-600">Fat</p>
+                  <p class="font-bold">{{message.nutritionData.fat || 'N/A'}}</p>
+                </div>
+              </div>
+              <p *ngIf="message.nutritionData.summary" 
+                 class="text-sm text-gray-600 italic">
+                {{message.nutritionData.summary}}
+              </p>
+            </div>
+
+            <ng-template #textOnly>
+              {{message.content}}
+            </ng-template>
+          </div>
+        </div>
+      </div>
+
+     
+      <div *ngIf="isLoading" class="flex justify-center">
+        <div class="flex space-x-2">
+          <div class="w-2 h-2 bg-green-500 rounded-full animate-bounce"></div>
+          <div class="w-2 h-2 bg-green-600 rounded-full animate-bounce delay-100"></div>
+          <div class="w-2 h-2 bg-green-700 rounded-full animate-bounce delay-200"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-200 p-4 bg-gray-50">
+      <div *ngIf="error" class="mb-2 p-2 bg-red-100 text-red-700 rounded text-sm">
+        {{error}}
+      </div>
+      <div class="flex gap-2">
+        <input
+          [(ngModel)]="userInput"
+          (keyup.enter)="sendMessage()"
+          type="text"
+          placeholder="Enter food item (e.g., 1 banana)"
+          class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+        >
+        <button
+          (click)="sendMessage()"
+          [disabled]="isLoading"
+          class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg disabled:opacity-50"
+        >
+          {{isLoading ? 'Analyzing...' : 'Send'}}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

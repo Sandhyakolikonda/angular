@@ -1,33 +1,44 @@
-<div class="relative h-screen">
+
+
+
+
+  <div class="relative h-screen">
     <!-- Background Pattern -->
     <div class="absolute inset-0">
-      <div class="relative h-full w-full [&>div]:absolute [&>div]:bottom-0 [&>div]:right-0 [&>div]:z-[-2] [&>div]:h-full [&>div]:w-full [&>div]:bg-gradient-to-b [&>div]:from-pink-200 [&>div]:to-white">
+      <div class="relative h-full w-full [&>div]:absolute [&>div]:bottom-0 [&>div]:right-0 [&>div]:z-[-2] [&>div]:h-full [&>div]:w-full [&>div]:bg-gradient-to-b [&>div]:from-blue-200 [&>div]:to-white">
       <div></div>
       
     </div>
     </div>
     
-    <!-- Hero Content -->
-    <div class="relative z-10 flex h-full flex-col items-center justify-center px-4">
-      <div class="max-w-3xl text-center">
-        
-        
-  </div>
-      
+    
+  
+  <!-- Hero Content -->
+  <div class="relative z-10 flex h-full flex-col items-center justify-center px-4">
+   <div>
+  <div class="data flex flex-col" *ngFor="let o of data">
+  <div class="rounded-b-3xl box-border size-32 border-4 p-4">
+      <p class=" text-2xl text-black justify-center items-center absolute top-0 right-0 size-16 ">{{o.user}}</p>
 
-
-        <div class="data flex flex-col" *ngFor="let o of data">
-    <p class=" text-2xl  text-black justify-center items-center ">{{o.user}}</p>
-    <p class=" text-xl text-blue-400 justify-center items-center">{{o.bot}}</p>
+    </div>
+    
+    <p class=" text-xl text-blue-500 justify-center items-center absolute inset-y-3 left-4 w-100 ">{{o.bot}}</p>
   </div>
   <div class="input">
     <input type="text" placeholder="Enter the text"
-     [(ngModel)]="inp" [value]="inp" class="block w-full p-2 text-white border border-blue-300 rounded-lg bg-blue-300 text-base focus:ring-blue-300 focus:border-blue-300 dark:bg-blue-300 dark:border-blue-600 dark:placeholder-blue-200 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500 text-center">
+     [(ngModel)]="inp" [value]="inp" class="block w-6xl p-4 text-blue-500 border border-blue-300 rounded-lg bg-blue-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-blue-700 dark:to-blue-100-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 absolute inset-x-0 bottom-0 h-16">
      
-     <button (click)="sendToAPI()"  
-     class=" bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 float-right text-white text-center gap-2">send</button>
-     </div>
+     <button (click)="sendToAPI()"  class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 absolute right-70 bottom-0 size-16">send</button>
 
+  </div>
+</div>
+  </div>
+</div>
+      
+
+
+       
+     
     
      
 

@@ -1,0 +1,27 @@
+body {
+  background: linear-gradient(90deg, #ff7e5f, #feb47b, #86a8e7, #7f7fd5);
+  overflow: hidden;
+}
+
+
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+body{
+    background-image: url('https://www.shutterstock.com/image-photo/assorted-foods-calorie-count-labels-600nw-2502773973.jpg');
+    
+}
