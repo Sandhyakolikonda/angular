@@ -8,6 +8,7 @@ import { AppService } from './app.service';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  isLoading = false;
   q: any = {}; inp: string = ''
   apiRes: any = '';
   data:any=[]
