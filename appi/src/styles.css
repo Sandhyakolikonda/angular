@@ -3,4 +3,6 @@
 body{
     background-image: url('https://img.freepik.com/free-photo/herbs-vegetables-white-background_23-2147828984.jpg');
     margin: auto;
+    object-fit: contain;
 }
+
