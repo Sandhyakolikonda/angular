@@ -1,8 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
 body{
-    background-image: url('https://img.freepik.com/free-photo/herbs-vegetables-white-background_23-2147828984.jpg');
-    margin: auto;
-    object-fit: contain;
+    background-image: url('https://www.shutterstock.com/image-photo/healthy-fruits-vegetables-on-white-260nw-2474337763.jpg');
+    background-repeat: no-repeat;
 }
 
